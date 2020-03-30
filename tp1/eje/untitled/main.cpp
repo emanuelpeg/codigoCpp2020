@@ -77,6 +77,11 @@ int mcd(int a, int b) {
     }
 }
 
+bool esVocal(char v){
+
+    return v == 65 || v==97 || v==69 || v==101 || v==73 || v==105 || v==79 || v==111 || v==85 || v==117;
+}
+
 int main(int argc, char *argv[])
 {
     int numerador = 5;
@@ -108,6 +113,10 @@ int main(int argc, char *argv[])
     intercambiar(aa, ba, 5);
     cout<< ba[0]<< endl;
     cout<< ba[1]<< endl;
+
+    for (char i = 65; i < 120; i++) {
+        cout << i << " : " << (int) i << " es vocal "<< esVocal(i) <<endl;
+    }
     return 0;
 }
 
