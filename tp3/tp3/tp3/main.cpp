@@ -202,10 +202,33 @@ char ** separarPalabras(char * palabra, char sep, int &cantResult) {
     return palabras;
 }
 
+int cantidadFiltrada(char ** palabras, int cant, char primera) {
+    int cont = 0;
+    for(int i = 0; i < cant; i++) {
+        if (palabras[i][0] == primera) {
+            cont++;
+        }
+    }
+    return cont;
+}
+
+char ** filtrar(char ** palabras, int cant, char primera, int &cantSalida) {
+    cantSalida = cantidadFiltrada(palabras, cant, primera);
+    char ** aux = new char*[cantSalida];
+    int j= 0;
+    for(int i = 0; i < cant; i++) {
+        if (palabras[i][0] == primera) {
+            aux[j] = palabras[i];
+            j++;
+        }
+    }
+    return  aux;
+}
+
 
 int main(int argc, char *argv[])
 {
-    char * palabra =  "Hello World!";
+  /*  char * palabra =  "Hello World!";
     char * palabra2 =  "AAbaAaAEEACAE";
     cout << toupper(palabra) << endl;
     cout << tolower(palabra) << endl;
@@ -236,7 +259,28 @@ int main(int argc, char *argv[])
     for (int i = 0; i<cant; i++) {
         cout << palabras[i] << " | ";
     }
-    cout << endl;
+    cout << endl;*/
 
+    char** palabras2 = new char*[4];
+    palabras2[0] ="ave";
+    palabras2[1] ="arbol";
+    palabras2[2] ="cuadro";
+    palabras2[3] = "mesa";
+    int cantFiltrado = 0;
+
+    char ** palabras3 = filtrar(palabras2, 4, 'a', cantFiltrado);
+
+    for (int i = 0; i<cantFiltrado; i++) {
+        cout << palabras3[i] << " | ";
+    }
+
+    cout << endl;
+    char ** palabras4 = filtrar(palabras2, 4, 'c', cantFiltrado);
+
+    for (int i = 0; i<cantFiltrado; i++) {
+        cout << palabras4[i] << " | ";
+    }
+
+    delete palabras2;
     return 0;
 }
