@@ -16,8 +16,8 @@ int main()
     gestorContable.imprimir(unTerreno);
 
     Bien * unRodado = new Rodado();
-    Rodado * o = 0;
-    if (o = reinterpret_cast<Rodado*> (unRodado)) {
+    Rodado * o = NULL;
+    if (o = dynamic_cast<Rodado*> (unRodado)) {
         o->setKm(2450);
     }
 
