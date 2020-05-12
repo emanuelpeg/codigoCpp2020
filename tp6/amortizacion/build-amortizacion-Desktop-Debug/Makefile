@@ -54,12 +54,14 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../amortizacion/main.cpp \
 		../amortizacion/bien.cpp \
+		../amortizacion/edificio.cpp \
 		../amortizacion/rodado.cpp \
 		../amortizacion/mueble.cpp \
 		../amortizacion/terreno.cpp \
 		../amortizacion/gestorcontable.cpp 
 OBJECTS       = main.o \
 		bien.o \
+		edificio.o \
 		rodado.o \
 		mueble.o \
 		terreno.o \
@@ -224,11 +226,13 @@ DIST          = /usr/lib64/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib64/qt5/mkspecs/features/yacc.prf \
 		/usr/lib64/qt5/mkspecs/features/lex.prf \
 		../amortizacion/amortizacion.pro bien.h \
+		edificio.h \
 		rodado.h \
 		mueble.h \
 		terreno.h \
 		gestorcontable.h ../amortizacion/main.cpp \
 		../amortizacion/bien.cpp \
+		../amortizacion/edificio.cpp \
 		../amortizacion/rodado.cpp \
 		../amortizacion/mueble.cpp \
 		../amortizacion/terreno.cpp \
@@ -612,11 +616,16 @@ main.o: ../amortizacion/main.cpp ../amortizacion/bien.h \
 		../amortizacion/mueble.h \
 		../amortizacion/rodado.h \
 		../amortizacion/terreno.h \
-		../amortizacion/gestorcontable.h
+		../amortizacion/gestorcontable.h \
+		../amortizacion/edificio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../amortizacion/main.cpp
 
 bien.o: ../amortizacion/bien.cpp ../amortizacion/bien.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bien.o ../amortizacion/bien.cpp
+
+edificio.o: ../amortizacion/edificio.cpp ../amortizacion/edificio.h \
+		../amortizacion/bien.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o edificio.o ../amortizacion/edificio.cpp
 
 rodado.o: ../amortizacion/rodado.cpp ../amortizacion/rodado.h \
 		../amortizacion/bien.h

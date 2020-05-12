@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     bien.cpp \
+    edificio.cpp \
     rodado.cpp \
     mueble.cpp \
     terreno.cpp \
@@ -12,6 +13,7 @@ SOURCES += main.cpp \
 
 HEADERS += \
     bien.h \
+    edificio.h \
     rodado.h \
     mueble.h \
     terreno.h \

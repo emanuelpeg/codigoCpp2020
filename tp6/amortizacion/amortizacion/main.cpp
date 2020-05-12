@@ -4,6 +4,7 @@
 #include "rodado.h"
 #include "terreno.h"
 #include "gestorcontable.h"
+#include "edificio.h"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ int main()
     GestorContable gestorContable = GestorContable();
 
     Bien * unTerreno = new Terreno();
-    unTerreno->setValor(12000.0);
+    unTerreno->setValor(120000.0);
     gestorContable.imprimir(unTerreno);
 
     Bien * unRodado = new Rodado();
@@ -25,9 +26,14 @@ int main()
     unRodado->setValor(400000.00);
     gestorContable.imprimir(unRodado);
 
-    Bien * unMueble = new Mueble(2000);
+    Bien * unMueble = new Mueble(2019);
     unMueble->setValor(47000.00);
     gestorContable.imprimir(unMueble);
+
+    Bien * edificio = new Edificio(2012, 4);
+    edificio->setValor(870000.00);
+    gestorContable.imprimir(edificio);
+
 
     return 0;
 }
