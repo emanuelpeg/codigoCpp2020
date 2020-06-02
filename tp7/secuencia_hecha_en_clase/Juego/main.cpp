@@ -4,10 +4,10 @@
 using namespace std;
 
 int main()
-{
+{   char v;
     Juego j;
     j.crearSecuencia();
-    while (true) {
+    do  {
         cout << j.getPrimero() << "  " << j.getSegundo() << " ___ " << j.getCuarto() << endl;
         int valor = 0;
         cin >> valor;
@@ -18,13 +18,11 @@ int main()
             cout << "Perdiste! Puntaje : "<< j.getPuntaje() << endl;
         }
         cout << "Queres jugar denuevo ? S/N " << endl;
-        char v;
+
         cin >> v;
-        if (v == 'n') { break; }
-        else {
-            j.crearSecuencia();
-        }
-    }
+        if (v == 'n') j.crearSecuencia();
+    } while (v != 'n');
+
 
     return 0;
 }

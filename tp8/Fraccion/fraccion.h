@@ -1,6 +1,6 @@
 #ifndef FRACCION_H
 #define FRACCION_H
-
+#include <iostream>
 class Fraccion
 {
 private:
