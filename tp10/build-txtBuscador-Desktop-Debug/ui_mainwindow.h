@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
@@ -34,6 +35,7 @@ public:
     QLineEdit *lineEdit;
     QCommandLinkButton *commandLinkButton;
     QTableView *tableView;
+    QFormLayout *formLayout;
     QTextEdit *textEdit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -67,6 +69,11 @@ public:
         tableView->setEnabled(true);
 
         verticalLayout->addWidget(tableView);
+
+        formLayout = new QFormLayout();
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+
+        verticalLayout->addLayout(formLayout);
 
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));

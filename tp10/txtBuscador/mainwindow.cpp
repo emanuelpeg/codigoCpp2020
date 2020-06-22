@@ -24,11 +24,13 @@ void MainWindow::on_commandLinkButton_clicked()
 {
     QDir directory(this->ui->lineEdit->text());
     QStringList files = directory.entryList(QStringList() << "*.txt",QDir::Files);
+
     QStandardItemModel * model = new QStandardItemModel();
     int i = 0;
     model->setColumnCount(2);
     model->setHorizontalHeaderItem(0, new QStandardItem("archivos"));
     model->setHorizontalHeaderItem(1, new QStandardItem("cantidad"));
+
     foreach(QString filename, files) {
         QStandardItem * item = new QStandardItem(filename);
         model->setItem(i, 0, item);

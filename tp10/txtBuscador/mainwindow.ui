@@ -37,6 +37,9 @@
      </widget>
     </item>
     <item>
+     <layout class="QFormLayout" name="formLayout"/>
+    </item>
+    <item>
      <widget class="QTextEdit" name="textEdit">
       <property name="enabled">
        <bool>true</bool>
